@@ -1,0 +1,14 @@
+<md-dialog aria-label="Your calendars">
+    <md-dialog-content>
+        <md-list>
+            <md-list-item ng-repeat="item in items">
+                <md-button ng-click="openCalendar(item)">{{item.summary}}</md-button>
+            </md-list-item>
+        </md-list>
+    </md-dialog-content>
+    <md-dialog-actions>
+        <md-button ng-click="closeDialog()" class="md-primary">
+            Close
+        </md-button>
+    </md-dialog-actions>
+</md-dialog>

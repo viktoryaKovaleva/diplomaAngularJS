@@ -1,2 +1,3 @@
-# diplomaAngularJS
-The practical part of thesis written on AngularJS.
+# diploma-angularjs #
+
+[ Created using angular-seed ](https://github.com/angular/angular-seed)

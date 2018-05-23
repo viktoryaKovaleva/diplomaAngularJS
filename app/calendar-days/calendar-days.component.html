@@ -1,0 +1,17 @@
+<md-content class="md-padding" layout-xs="column" layout-gt-xs="row" layout-wrap flex permission permission-only="'isAuthenticated'">
+     <div flex-xs="100" layout-padding flex-gt-xs='50' flex-gt-md='33' layout="column" layout-align='center center' ng-repeat="day in week">
+        <md-card flex='100' layout-fill>
+            <md-card-content>
+                <img src="https://picsum.photos/750/250/?random" class="md-card-image" alt="Washed Out">
+            </md-card-content>
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">{{day | date: 'EEEE'}}</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button ng-click="openDay($event, day)">Open</md-button>
+            </md-card-actions>
+        </md-card>
+    </div>
+</md-content>

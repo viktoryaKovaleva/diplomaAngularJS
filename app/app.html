@@ -1,0 +1,8 @@
+<md-toolbar class="md-hue-2" permission permission-only="'isAuthenticated'">
+    <div class="md-toolbar-tools">
+        <h2 flex md-truncate>{{googleUser.name}} | {{$root.googleCalendar ? $root.googleCalendar.summary: googleCalendar.summary}}</h2>
+        <md-button aria-label="Logout" ng-click="googleLogout()">
+            Logout
+        </md-button>
+    </div>
+</md-toolbar>

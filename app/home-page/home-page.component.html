@@ -1,0 +1,25 @@
+<div ng-cloak permission permission-only="'isAuthenticated'">
+    <md-toolbar class="md-hue-2">
+        <div class="md-toolbar-tools">
+            <h2 flex md-truncate>{{googleUser.name}} | {{googleCalendar.summary}}</h2>
+            <md-button aria-label="Logout" ng-click="googleLogout()">
+                Logout
+            </md-button>
+        </div>
+    </md-toolbar>
+    <div class="welcome-card-wrapper" ng-if="!googleCalendar">
+        <md-card class="welcome-card fadeInUp">
+            <md-card-title class="welcome-card-title">Hello {{googleUser.given_name}}</md-card-title>
+            <md-card-content class="welcome-card-content" >
+                <div ng-if="created===false">Creating calendar...</div>
+            </md-card-content>
+            <md-card-content class="welcome-card-buttons-wrapper">
+                <md-button ng-click="chooseCalendar($event)">Choose calendar</md-button>
+                <md-button ng-click="createCalendar($event)">Create calendar</md-button>
+            </md-card-content>
+        </md-card>
+    </div>
+    <div ng-controller="CalendarDaysCtrl" ng-if="googleCalendar">
+        <div ng-include="'calendar-days/calendar-days.component.html'"></div>
+    </div>
+</div>

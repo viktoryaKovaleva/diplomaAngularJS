@@ -1,0 +1,51 @@
+<md-dialog aria-label="{{day}}">
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>{{day | date: 'fullDate'}}</h2>
+                <span flex></span>
+            </div>
+        </md-toolbar>
+        <md-dialog-content style="min-width:800px;min-height:300px; ">
+            <div id="toast"></div>
+            <md-tabs md-dynamic-height md-border-bottom>
+                <md-tab label="Tasks">
+                    <md-content class="md-padding">
+                        <img src="https://picsum.photos/800/200/?random">
+                        <md-list>
+                            <md-list-item ng-repeat="event in events">
+                                <md-input-container class="md-block" flex-gt-sm>
+                                    <label>Task</label>
+                                    <input ng-model="event.summary">
+                                </md-input-container>
+                                <md-button class="md-icon-button">
+                                    <md-icon aria-label="Edit" ng-click="editEvent(event, $index)">edit</md-icon>
+                                </md-button>
+                                <md-button class="md-icon-button">
+                                    <md-icon aria-label="Delete" ng-click="deleteEvent(event, $index)">delete</md-icon>
+                                </md-button>
+                            </md-list-item>
+                        </md-list>
+                    </md-content>
+                </md-tab>
+                <md-tab label="Create new task">
+                    <md-content class="md-padding">
+                        <div layout-gt-sm="row">
+                            <md-input-container class="md-block" flex-gt-sm>
+                                <label>Task...</label>
+                                <input ng-model="eventName">
+                                <md-button ng-click="creteEvent()">Save</md-button>
+                            </md-input-container>
+                        </div>
+                     </md-content>
+                </md-tab>
+            </md-tabs>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button ng-click="closeDialog()" >
+                Close
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>
