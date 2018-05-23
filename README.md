@@ -2,6 +2,10 @@
 
 [ Created using angular-seed ](https://github.com/angular/angular-seed)
 
+## Run project
+1) Open folder where project was cloned ( cd Documents/folder where project located )
+2) in terminal run "npm start"
+
 ## Libs used
 1. [ AngularJS ](https://github.com/angular/angular.js)
 2. [ AngularJS Material (Arial, Messages, Animate)](https://github.com/angular/material)
